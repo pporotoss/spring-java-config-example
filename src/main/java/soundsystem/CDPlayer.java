@@ -6,6 +6,7 @@ public class CDPlayer implements MediaPlayer {
 
   @Autowired
   public CDPlayer(CompactDisc cd) {
+    System.out.println("CDPlayer 생성자 호출!!!");
     this.cd = cd;
   }
 
