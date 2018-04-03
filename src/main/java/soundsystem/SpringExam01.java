@@ -15,8 +15,12 @@ public class SpringExam01 {
     
         System.out.println("compactDisc1 == compactDisc2 : " + (compactDisc1 == compactDisc2));
     
-        CompactDisc compactDisc3 = context.getBean("compactDisc2", CompactDisc.class);
-        compactDisc3.play();
+        CompactDisc myDisc = context.getBean("myDisc", CompactDisc.class);
+        myDisc.play();
+        
+        CDPlayer cdPlayer = context.getBean(CDPlayer.class);
+        cdPlayer.play();
+        
     }
     
 }

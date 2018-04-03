@@ -5,8 +5,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration // 스프링 설정 클래스 어노테이션
 public class CDPlayerConfig {
   
-  @Bean
-  public CDPlayer cdPlayer(CompactDisc compactDisc) {
+  @Bean// 주입받는 파라미터명은 빈 이름과 동일해야 한다.
+  public CDPlayer cdPlayer(CompactDisc compactDisc) { // compactDisc 빈 주입
+//  public CDPlayer cdPlayer(CompactDisc myDisc) { // myDisc 빈 주입
+    
     System.out.println("cdPlayer() 호출!!!!!");
     return new CDPlayer(compactDisc);
   }
@@ -19,8 +21,8 @@ public class CDPlayerConfig {
   }
   
   @Bean
-  public CompactDisc compactDisc2() {
-    System.out.println("compactDisc2() 호출!!!!");
+  public CompactDisc myDisc() {
+    System.out.println("myDisc() 호출!!!!");
     return new MyDisc();
   }
 
